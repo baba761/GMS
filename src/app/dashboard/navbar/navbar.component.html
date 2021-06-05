@@ -1,0 +1,25 @@
+<mat-sidenav-container  class="sidenav-container">
+  <mat-sidenav color="primary" #drawer class="sidenav" fixedInViewport
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="(isHandset$ | async) === true">
+      <mat-toolbar>Module</mat-toolbar>
+      <app-module-tree></app-module-tree>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span>GMS</span>
+    </mat-toolbar>
+    <!-- Add Content Here -->
+
+<router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
