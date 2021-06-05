@@ -13,7 +13,8 @@ import { DashboardModule } from './dashboard/dashboard.module';
   declarations: [
     AppComponent,
     FrontendLayoutComponent,
-    BackendLayoutComponent
+    BackendLayoutComponent,
+
     
   ],
   imports: [

@@ -1,9 +1,46 @@
-<mat-card>Simple card</mat-card>
-<mat-tab label="Long tab">
-    <div class="example-large-box mat-elevation-z4">
-      Large content
-    </div>
-  </mat-tab>
-<button mat-raised-button color="primary">Primary</button>
-<button mat-raised-button color="accent">Accent</button>
+<form [formGroup]="addressForm" novalidate (ngSubmit)="onSubmit()">
+  <mat-card class="shipping-card">
+    <mat-card-header >
+      <div style="margin: 0 auto;">LOGIN</div>
+      
+    </mat-card-header>
+    <mat-card-content>
+      <div style="margin: 0 auto;">
 
+      
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="UserName" formControlName="firstName">
+            <mat-error *ngIf="addressForm.controls['firstName'].hasError('required')">
+              UserName is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+    </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Password" formControlName="lastName">
+            <mat-error *ngIf="addressForm.controls['lastName'].hasError('required')">
+              Password <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      
+    </mat-card-content>
+    <mat-card-actions>
+      <div class="row">
+        <div class="col">
+          <button   mat-raised-button color="primary" type="submit">Login</button>
+          <!-- <button style="float: right;"   mat-raised-button color="primary" type="submit"></button>
+           -->
+        </div>
+        
+      </div>
+      
+    </mat-card-actions>
+  </mat-card>
+</form>
